@@ -89,7 +89,8 @@ function myTimer() {
 function setTime() {
   time = time - 1;
   if (heard <= 0) {
-    window.open("lose.html", "_self");
+    var queryString = "?level=" + level+"?game=BasicGame.html"
+    window.open("lose.html"+queryString, "_self");
     return;
   }
   if (time <= 0) {
