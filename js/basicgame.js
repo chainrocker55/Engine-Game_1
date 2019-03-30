@@ -7,6 +7,14 @@ var level = location.search.split('level=')[1]
 var time = 20;
 var score = 0;
 var heard = 100;
+
+function startGame(){
+  document.getElementById('start').innerHTML = 'Start!!'
+  document.getElementById('start2').innerHTML = 'level ' +level
+  setTimeout(function() {
+    Question()
+  }, 1500);
+}
 function Question() {
   var nation = Math.floor(Math.random() * 4 + 1);
   removeBoxMove();
@@ -191,12 +199,11 @@ function removeBoxMove() {
     document.getElementById("move1").classList.remove("boxMove");
     document.getElementById("move2").classList.remove("boxMove");
     document.getElementById("time").classList.remove("boxMove");
-    document.getElementById("heard").classList.remove("boxMove");
   }, 1500);
 }
 function addBoxMove() {
   document.getElementById("move1").classList.add("boxMove");
   document.getElementById("move2").classList.add("boxMove");
   document.getElementById("time").classList.add("boxMove");
-  document.getElementById("heard").classList.add("boxMove");
 }
+

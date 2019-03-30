@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="css/howtoplay.css">
+  <script src="./js/howtoplay.js"></script>
 </head>
 
 <body>
@@ -15,21 +16,17 @@
  <section class="section">
     <div class="container">
        
-        <nav class="level">
-          <div class="level-item has-text-centered">
-            <textarea id="howtoplay" style="border:10px solid grey" class=" is-medium is-hovered" disabled rows="15" cols="150"></textarea>
-          </div>
-          <figure class="image is-128x128">
-              <img src="img/giphy (1).gif">
-            </figure>
-        </nav>
+        <p class="has-text-centered"> 
+            <iframe style="height: 300px;" width="800"  src="https://www.youtube.com/embed/0SUC2sThR1g"></iframe>
+        
+        </p>
         <div class="menu level">
     
-          <a class="flex-start" href="home.html">
+          <a class="flex-start" href="chooseGame.html">
               <img src="./img/back.png" alt="back">
           </a>
           
-          <a class="flex-end" href="home.html">
+          <a class="flex-end" onclick="sentParameter('BasicGame.html')">
             <img src="./img/play.png" alt="back">
         </a>
         </div>

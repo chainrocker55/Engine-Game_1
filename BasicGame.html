@@ -8,11 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="css/gameBasic.css">
-    <script src="./js/script.js"></script>
+    <script  src="./js/basicgame.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
 
-<body onload="Question()">
+<body onload="startGame()">
 
+    <div class="modal" style=" overflow: hidden;">
+        <div style=" overflow: hidden;" class="modal-background"></div>
+        <div style=" overflow: hidden;" class="modal-content has-text-centered">
+            <h1 class="title " id="start" style="font-family: cursive;color: white;font-size: 150px;font-weight: bolder"> </h1>
+            <h1 class="title " id="start2" style="font-family: cursive;color: white;font-size: 70px;font-weight: bolder"> </h1>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -20,10 +36,11 @@
                     <progress class="progress is-large is-success" id="heard" value="100" max="100">15%</progress>
                 </div>
                 <div class="column has-text-centered">
-                    <h1 class="title is-1" id="time" style="font-family: cursive;color: white">20</h1>
+                    <h1 class="title is-1" id="time" style="font-family: cursive;color: white ;font-size: 100px;">20</h1>
                 </div>
                 <div class="column has-text-right">
-                    <h1 id="score" class="title is-1" style="font-family: cursive;color: white;margin-right: 70px">Score :</h1>
+                    <h1 id="score" class="title is-1" style="font-family: cursive;color: white;margin-right: 70px">Score
+                        :</h1>
                 </div>
             </div>
             <div class="columns">
@@ -35,16 +52,17 @@
                 </div>
                 <div class="column">
                     <div style="margin-top:50px;"></div>
-                    <img id="damage1" style="position:absolute;visibility :hidden;" width="200" height="200" src="img/damage1.gif">
-                    <img id="damage2"  style="position:absolute;transform: scaleX(-1);visibility :hidden;" width="200" height="200"
+                    <img id="damage1" style="position:absolute;visibility :hidden;" width="200" height="200"
                         src="img/damage1.gif">
+                    <img id="damage2" style="position:absolute;transform: scaleX(-1);visibility :hidden;" width="200"
+                        height="200" src="img/damage1.gif">
                 </div>
                 <div class="column ">
                     <img style="height: 300px;width: 300px;" src="img/player2.gif">
                 </div>
                 <div class="column ">
 
-                    </div>
+                </div>
 
             </div>
             <div id="move1" class="columns ">
@@ -58,28 +76,43 @@
             <div id="move2" class="columns">
                 <div class="column ">
                     <div class=" has-text-centered">
-                        <button onclick="checkAnswer(1)" style="width: 150px"  id="c1" class="button is-info  title" style="font-family: cursive">2 + 3 = ?</button>
+                        <button onclick="checkAnswer(1)" style="width: 150px" id="c1" class="button is-info  title"
+                            style="font-family: cursive">2 + 3 = ?</button>
                     </div>
                 </div>
                 <div class="column ">
                     <div class=" has-text-centered">
-                        <button onclick="checkAnswer(2)" style="width: 150px"  id="c2" class="button is-warning title" style="font-family: cursive">2 + 3 = ?</button>
+                        <button onclick="checkAnswer(2)" style="width: 150px" id="c2" class="button is-warning title"
+                            style="font-family: cursive">2 + 3 = ?</button>
                     </div>
                 </div>
                 <div class="column ">
                     <div class=" has-text-centered">
-                        <button onclick="checkAnswer(3)" style="width: 150px"  id="c3" class="button is-danger title" style="font-family: cursive">2 + 3 = ?</button>
+                        <button onclick="checkAnswer(3)" style="width: 150px" id="c3" class="button is-danger title"
+                            style="font-family: cursive">2 + 3 = ?</button>
                     </div>
                 </div>
                 <div class="column ">
                     <div class=" has-text-centered">
-                        <button onclick="checkAnswer(4)" style="width: 150px" id="c4" class="button is-success title" style="font-family: cursive">2 + 3 = ?</button>
+                        <button onclick="checkAnswer(4)" style="width: 150px" id="c4" class="button is-success title"
+                            style="font-family: cursive">2 + 3 = ?</button>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function () {
+            $(".modal").addClass("is-active");
+            removeShowStart()
+            function removeShowStart() {
+                setTimeout(function () {
+                    $(".modal").removeClass("is-active");
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 
 </html>
