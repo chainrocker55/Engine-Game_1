@@ -8,19 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="css/gameBasic.css">
-    <script  src="./js/basicgame.js"></script>
+    <script src="./js/basicgame.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
 
 <body onload="startGame()">
-
+    <audio autoplay>
+            <source src="./sound/1017.ogg" type="audio/ogg">
+        <source src="./sound/1017.mp3" type="audio/mpeg">
+ 
+        Your browser does not support the audio element.
+    </audio>
     <div class="modal" style=" overflow: hidden;">
         <div style=" overflow: hidden;" class="modal-background"></div>
         <div style=" overflow: hidden;" class="modal-content has-text-centered">
-            <h1 class="title " id="start" style="font-family: cursive;color: white;font-size: 150px;font-weight: bolder"> </h1>
-            <h1 class="title " id="start2" style="font-family: cursive;color: white;font-size: 70px;font-weight: bolder"> </h1>
+            <h1 class="title " id="start"
+                style="font-family: cursive;color: white;font-size: 150px;font-weight: bolder"> </h1>
+            <h1 class="title " id="start2"
+                style="font-family: cursive;color: white;font-size: 70px;font-weight: bolder"> </h1>
         </div>
     </div>
 
@@ -36,7 +43,8 @@
                     <progress class="progress is-large is-success" id="heard" value="100" max="100">15%</progress>
                 </div>
                 <div class="column has-text-centered">
-                    <h1 class="title is-1" id="time" style="font-family: cursive;color: white ;font-size: 100px;">20</h1>
+                    <h1 class="title is-1" id="time" style="font-family: cursive;color: white ;font-size: 100px;">20
+                    </h1>
                 </div>
                 <div class="column has-text-right">
                     <h1 id="score" class="title is-1" style="font-family: cursive;color: white;margin-right: 70px">Score
@@ -103,9 +111,15 @@
         </div>
     </section>
     <script>
+        // playAudio()
+
+        // function playAudio() {
+        //     document.getElementById("startAudio").play();
+        // }
         $(document).ready(function () {
             $(".modal").addClass("is-active");
             removeShowStart()
+
             function removeShowStart() {
                 setTimeout(function () {
                     $(".modal").removeClass("is-active");

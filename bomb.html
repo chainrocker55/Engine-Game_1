@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="./js/game.js"></script>
+    <title>Game</title>
+</head>
+
+<body onload="checkpass(),checkreset(),onenum(ex1)">
+
+    <section>
+            
+        <div class="container has-text-centered">
+                <div class=" has-text-right" style="position: absolute;margin-left: 60%">
+                        <h1 class="title" id="time" style="font-family: cursive;color: white ;font-size: 20px;margin-top: 10px">
+                            คำนวณเลขยกกำลังให้ถูกโดยใส่ในช่อง answer และกด ปุ่ม click me เพื่อ ลากคำตอบไปวางในช่อง "?"
+                        </h1>
+                    </div>
+            <div id="t1me">
+                <p id="timelabel"> </p>
+            </div>
+            <div id="divcountbomb">
+                <p id="countb">
+                </p>
+            </div>
+            <div id="divcountex">
+                <p id="countex">
+                </p>
+            </div>
+            <div id="divcountpass">
+                <p id="countp" onchange="checkpass()">
+
+                </p>
+            </div>
+            <div id="divcountreset">
+                <p id="countre">
+
+                </p>
+            </div>
+            <div id="circle"></div>
+            <div id="divbuttdisposal">
+                <button id="buttdisposal" class="button is-danger" style="margin-top:10px" onclick="getdisposer()">click
+                    for drag answer</button>
+            </div>
+            <div id="divbuttpass">
+                <button id="buttpass" class="button is-info button" onclick="usepass(),checkpass()">Pass this bomb
+                </button>
+            </div>
+            <div id="divbuttresetspeed">
+                <button id="buttresetspeed" class="button is-warning button"
+                    onclick="usereset(),checkreset()">Fix</button>
+            </div>
+            <div id="divdisposal" style="margin-bottom: 20px;">
+                <p id="disposal" class="title is-hidden" draggable="false"></p>
+            </div>
+
+            <div id="inpuut">
+                <input type="number" style="" placeholder="answer" id="inputdisposal" oninput="oninnput()" onkeypress="typing(),nondrop()">
+            </div>
+            <div id="haa1">
+                <p id="a1">
+                    <script>
+                        getLevel()
+                    </script>
+                </p>
+            </div>
+            <div id="haax">
+                <p id="ax">
+                    <script>
+                        getLevel()
+                    </script>
+                </p>
+            </div>
+            <div id="haae">
+                <p id="ae">=</p>
+            </div>
+            <div id="haar">
+                <p style="border: 1px solid black;width: 100px;" id="result" ondrop="checkdisposerstatus(event)"
+                    ondragover="allowDrop(event)">?</p>
+            </div>
+            <div class="is-flex is-horizontal-center bomb ">
+                <figure>
+                    <img src="./img/bomb.png">
+                </figure>
+
+            </div>
+            
+        </div>
+        
+    </section>
+</body>
+
+</html>
