@@ -1,0 +1,28 @@
+    canvas {
+        border: 1px solid #d3d3d3;
+        background-color: #f1f1f1;
+       /* cursor: url(./xd/peepopog.cur), default; */
+       background: url(../img/bg.png);
+       padding-left: 0;
+       padding-right: 0;
+       margin-left: auto;
+       margin-right: auto;
+       display: block;
+       width: 790px;
+    }
+    input {
+        position: absolute;
+        width: 300px;
+        height: 50px;
+        bottom: -5%;
+        left: 40%;
+        margin-bottom: 10px;
+        font-size: 2em;
+        padding: 5px;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+    
